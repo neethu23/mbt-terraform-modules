@@ -1,17 +1,10 @@
-variable "region" {
-    type = string
-  
-}
+
 
 variable "name" {
     type = string
   
 }
 
-variable "instance_type" {
-    type = string
-  
-}
 
 variable "cidr_block" {
     type = string
@@ -48,7 +41,3 @@ variable "az_2" {
   
 }
 
-# variable "vpc_id" {
-#     type = string
-  
-# }
