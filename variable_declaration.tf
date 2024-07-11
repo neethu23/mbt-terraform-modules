@@ -48,7 +48,33 @@ variable "az_2" {
   
 }
 
-# variable "vpc_id" {
-#     type = string
+variable "ami" {
+    type = string
   
-# }
+}
+
+variable "demo_key_name" {
+    type = string
+  
+}
+
+variable "demo_key_value" {
+    type = string 
+}
+
+variable "desired_capacity" {
+    type = string
+}
+
+variable "max_size" {
+    type = string
+}
+
+variable "min_size" {
+    type = string
+}
+
+variable "Environment" {
+    type = string
+  
+}

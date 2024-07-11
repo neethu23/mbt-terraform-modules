@@ -5,7 +5,7 @@ resource "aws_lb_target_group" "demo-target-group" {
   name     = "${var.name}-target-group"
   port     = 80
   protocol = "HTTP"
-  vpc_id   = aws_vpc.demo-vpc.id
+  vpc_id   = var.vpc_id
 }
 
 
@@ -14,12 +14,12 @@ resource "aws_lb" "demo-alb" {
   name               = "${var.name}-alb"
   internal           = false
   load_balancer_type = "application"
-  security_groups    = [aws_security_group.allow_80.id]
-  subnets            = [aws_subnet.demo-subnet-public-2a.id, aws_subnet.demo-subnet-public-2b.id]
+  security_groups    = [var.sg_80_id]
+  subnets            = [var.subnet_public_2a_id, var.subnet_public_2b_id]
 
 
   tags = {
-    Environment = "production"
+    Environment = "var.Environment"
   }
 }
 
